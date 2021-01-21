@@ -13,7 +13,11 @@
 
 		private $conn;
 
-		public function __construct(){
+		public function __construct($bd = ''){
+
+			if($bd !== 'MySql'){ #confirmação se o banco de dados utilizado é MySql
+				die("Informe se o banco de dados utilizado é MySql");
+			}
 
 			$this->conn = new PDO(SQL::DNS,SQL::USER,SQL::PASSWORD); #conectando banco de dados PDO pelo construtor
 
